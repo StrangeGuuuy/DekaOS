@@ -1,7 +1,7 @@
 import pyglet
 from pyglet.window import key
 
-window = pyglet.window.Window(1000,800, 'Project: SHELL')
+window = pyglet.window.Window(fullscreen = True)
 
 img=pyglet.resource.image('project_icon.png')
 window.set_icon(img)
@@ -9,15 +9,15 @@ batch = pyglet.graphics.Batch()
 label = pyglet.text.Label('PROJECT: SHELL',
                           font_name='Times New Roman',
                           font_size=40,
-                          x=500, y=400, batch = batch)
+                          x=window.width//2, y=window.height//2, batch = batch)
 label1 = pyglet.text.Label('Press z to start new game',
                           font_name='Times New Roman',
                           font_size=18,
-                          x=500, y=300, batch = batch)
+                          x=window.width//2, y=window.height//2 - 50, batch = batch)
 label2 = pyglet.text.Label('Press x to go to "insert savepoint code" place',
                           font_name='Times New Roman',
                           font_size=18,
-                          x=500, y=250, batch = batch)
+                          x=window.width//2, y=window.height//2 - 100, batch = batch)
 label.anchor_x = 'center'
 label1.anchor_x = 'center'
 label2.anchor_x = 'center'

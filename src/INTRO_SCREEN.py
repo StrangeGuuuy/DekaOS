@@ -3,7 +3,7 @@ from pyglet.window import key
 
 window = pyglet.window.Window(fullscreen=True)
 
-img=pyglet.resource.image('project_icon.png')
+img=pyglet.image.load('../imgs/project_icon.png')
 window.set_icon(img)
 batch = pyglet.graphics.Batch()
 label = pyglet.text.Label('PROJECT: SHELL',

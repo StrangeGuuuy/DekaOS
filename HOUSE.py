@@ -1,6 +1,8 @@
 import pyglet
 from pyglet.gl import *
 from pyglet.window import key
+
+
 batch = pyglet.graphics.Batch()
 background = pyglet.graphics.OrderedGroup(0)
 foreground = pyglet.graphics.OrderedGroup(1)
@@ -43,16 +45,20 @@ def on_key_press(symbol, modifiers):
     if boy.x < 0:
         boy.x = 0
 
+
 @window.event
 def on_draw():
     batch.draw()
     if boy.x > 120 and boy.x < 280:
         button1.update(x = 170, y = 300)
+
     if boy.x < 120 or boy.x > 280:
         button1.update(x = -100, y = -100)
         text_1.update(x=-100, y=-100)
+
     if boy.x > 420 and boy.x < 560:
         button.update(x = 490, y = 300)
+        
     if boy.x < 420 or boy.x > 560:
         button.update(x = -100, y = -100)
         text_2.update(x=-100, y = -100)

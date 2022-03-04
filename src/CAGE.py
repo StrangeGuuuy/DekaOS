@@ -1,7 +1,7 @@
 import pyglet
 
 window = pyglet.window.Window(632,454, "Where it belongs to be.")
-image = pyglet.resource.image('This.png')
+image = pyglet.resource.image('../imgs/This.png')
 
 @window.event
 def on_draw():

@@ -8,7 +8,7 @@ window = pyglet.window.Window(fullscreen = True)
 background = pyglet.graphics.OrderedGroup(0)
 foreground = pyglet.graphics.OrderedGroup(1)
 batch = pyglet.graphics.Batch()
-loading_screen_image = pyglet.image.load('Letschat_loading.png')
+loading_screen_image = pyglet.image.load('../imgs/Letschat_loading.png')
 loading_screen = pyglet.sprite.Sprite(loading_screen_image,
                                       x = window.width //4,
                                       y = window.height//10,

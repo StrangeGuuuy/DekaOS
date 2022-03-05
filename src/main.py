@@ -1,6 +1,8 @@
 import pyglet
 from pyglet import clock
 from pyglet.window import key
+
+
 window = pyglet.window.Window(fullscreen = True) #основное окно
 background = pyglet.graphics.OrderedGroup(0) #задний план
 foreground = pyglet.graphics.OrderedGroup(1) #передний план
@@ -15,10 +17,12 @@ deka = pyglet.sprite.Sprite(deka_image,
                             group = background)
 black_image = pyglet.image.load('../imgs/black.png') # картинка чёрной полосочки для перекрывания полоски с загрузкой, так как я ленивая жопа, не умеющая нормально показывать загрузку
 black = pyglet.sprite.Sprite(black_image,   #чёрная полосочка
-                            x =deka.x+50,
-                            y =deka.y+250,
-                            batch = batch,
-                            group = foreground)
+                            x=deka.x+50,
+                            y=deka.y+250,
+                            batch=batch,
+                            group=foreground)
+                            
+                            
 @window.event
 def on_draw(): # нарисовать их
     batch.draw()

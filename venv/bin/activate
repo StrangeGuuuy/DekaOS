@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/andrew/Documents/Projects/DekaOS/venv"
+VIRTUAL_ENV="/home/andrew/Документы/Projects/DekaOS/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

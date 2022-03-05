@@ -1,20 +1,21 @@
+#!/usr/bin/env python3
 import pyglet
 from pyglet import clock
 from pyglet.window import key
 
 
-window = pyglet.window.Window(fullscreen = True) #основное окно
-background = pyglet.graphics.OrderedGroup(0) #задний план
-foreground = pyglet.graphics.OrderedGroup(1) #передний план
-batch = pyglet.graphics.Batch() #список с будущими спрайтами
-dt = clock.tick() #тик-так из модуля pyglet.clock
+window = pyglet.window.Window(fullscreen=True) # основное окно
+background = pyglet.graphics.OrderedGroup(0) # задний план
+foreground = pyglet.graphics.OrderedGroup(1) # передний план
+batch = pyglet.graphics.Batch() # список с будущими спрайтами
+dt = clock.tick() # тик-так из модуля pyglet.clock
 i = 0 # количество действий
 deka_image = pyglet.image.load('../imgs/DekaOS_loading.png') # картинка с загрузкой
 deka = pyglet.sprite.Sprite(deka_image,
-                            x = window.width //4,
-                            y = window.height // 10,    #спрайт загрузки
-                            batch = batch,
-                            group = background)
+                            x=window.width //4,
+                            y=window.height // 10,    #спрайт загрузки
+                            batch=batch,
+                            group=background)
 black_image = pyglet.image.load('../imgs/black.png') # картинка чёрной полосочки для перекрывания полоски с загрузкой, так как я ленивая жопа, не умеющая нормально показывать загрузку
 black = pyglet.sprite.Sprite(black_image,   #чёрная полосочка
                             x=deka.x+50,
@@ -24,7 +25,7 @@ black = pyglet.sprite.Sprite(black_image,   #чёрная полосочка
                             
                             
 @window.event
-def on_draw(): # нарисовать их
+def on_draw() -> None: # нарисовать их
     batch.draw()
 
 @window.event

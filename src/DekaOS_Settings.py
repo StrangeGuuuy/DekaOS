@@ -444,7 +444,7 @@ def on_mouse_press(x,y,button,modifiers):
           if x > window.width // 4+530 and x < window.width // 4+650:
                if y > window.height // 10+432 and y < window.height //10+456:
                     window.close()
-                    os.system('DekaOS_Main_Menu.py')
+                    os.system('python3 DekaOS_Main_Menu.py')
 
           if x > window.width // 3 and x < window.width // 2.55:
                if y > window.height // 4.5 and y < window.height //4:

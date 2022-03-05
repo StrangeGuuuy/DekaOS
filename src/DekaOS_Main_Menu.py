@@ -3,19 +3,22 @@ import os
 window = pyglet.window.Window(fullscreen = True) #основное окно
 change = open('../DEKA_OS.txt','r')
 f = change.read()
+change.close()
 print(f)
 background = pyglet.graphics.OrderedGroup(0) # задний фон
-foreground = pyglet.graphics.OrderedGroup(1)# передний фон
-foreforeground = pyglet.graphics.OrderedGroup(2)# перепередний фон
-batch = pyglet.graphics.Batch()# лень объяснять повторяющиеся вещи
+foreground = pyglet.graphics.OrderedGroup(1) # передний фон
+foreforeground = pyglet.graphics.OrderedGroup(2) # перепередний фон
+batch = pyglet.graphics.Batch() # лень объяснять повторяющиеся вещи
 game_image = pyglet.image.load('../imgs/game.eze.png')
 yellow_image = pyglet.image.load('../imgs/cursor_yellow.png')
 deka_image = pyglet.image.load('../imgs/DekaOS_screen.png')
+
 deka = pyglet.sprite.Sprite(deka_image,
                             x = window.width //4,
                             y = window.height // 10,        #спрайт-экран
                             batch = batch,
                             group = background)
+                            
 settings_image = pyglet.image.load('../imgs/Settings.png')
 settings = pyglet.sprite.Sprite(settings_image,
                                 x = window.width //4 + 617,
@@ -88,19 +91,20 @@ def on_mouse_press(x,y,button,modifiers):
           if x > window.width //4 + 617 and x < window.width // 4+737:       #при нажатии на настройки
                if y > window.height // 10+612 and y < window.height //10+638:
                     window.close()
-                    os.system('DekaOS_Settings.py')        #ведёт на экран с настройками
+                    #os.system('DekaOS_Settings.py')        #ведёт на экран с настройками
+                    os.system('python3 DekaOS_Settings.py')
                      
           if x > window.width // 4+160 and x < window.width // 4+280:
                if y > window.height // 10+252 and y < window.height // 10+280:         #летсчат
                     if f == 'GAME = 0':
                          window.close()
-                         os.system('Letschat_Loading.py')
+                         os.system('python3 Letschat_Loading.py')
 
           if x > window.width // 4 + 500 and x < window.width // 4 + 620:
                if y > window.height // 10 + 300 and y < window.height // 10 + 324:
                     if f == 'GAME = 1':
                          window.close()
-                         os.system('Start_game.py')
+                         os.system('python3 Start_game.py')
         
         
 @window.event

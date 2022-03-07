@@ -1,7 +1,7 @@
 import pyglet
 import os
 window = pyglet.window.Window(fullscreen = True) #основное окно
-change = open('../DEKA_OS.txt','r')
+change = open('../DEKA_OS.txt')
 f = change.read()
 change.close()
 print(f)
